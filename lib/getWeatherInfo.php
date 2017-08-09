@@ -16,7 +16,7 @@ function getWeatherInfo($location) {
 }
 
 ######################### 生活指数  #####################
-function getLifeInfo($localtion) {
+function getLifeInfo($location) {
 
 	$url = 'https://api.seniverse.com/v3/life/suggestion.json?key=9vcct57owl33u2t1&location='.$location.'&language=zh-Hans';
 	$lifeInfo = json_decode(file_get_contents($url),true);
