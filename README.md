@@ -19,7 +19,7 @@
 
 	目前无法追踪到，手动配置
 
-2. 发送短信接口
+2. [发送短信接口](https://www.smsbao.com/openapi/)
 
 	- 使用阿里大于：申请复杂，模板固定
 
@@ -29,10 +29,17 @@
 
 	- 短信宝，终于找到一个注册后就可以使用的
 
-3. 天气接口
+3. [天气接口](https://www.seniverse.com/doc)
 
 	- 最终选择心知天气，选择经纬度定位确保获取成功
 
-4. 百度经纬度 API
+	- 生活指数
+
+
+4. [百度经纬度 API](http://lbsyun.baidu.com/index.php?title=%E9%A6%96%E9%A1%B5)
 
 5. 部署到线上环境定时执行
+
+
+## 参考
+- [http://apizza.cc/console/project/8e0342415ad3df5643409045ec8a5e75/browse?api=adde793df46746cdb0641b014a12ea18](http://apizza.cc/console/project/8e0342415ad3df5643409045ec8a5e75/browse?api=adde793df46746cdb0641b014a12ea18)
