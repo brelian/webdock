@@ -52,10 +52,11 @@
 5. 配置主机 hosts 文件，添加
 
     ```
-    [your-docker-machine-ip]  ci.jd.com
+    [your-docker-machine-ip]  ci.example.com
+    [your-docker-machine-ip]  laravel.example.com
     ```
 
-    访问 ci.jd.com
+    访问 ci.example.com 和 laravel.example.com
 
 
 
