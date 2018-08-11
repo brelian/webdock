@@ -1,5 +1,5 @@
 .idea
 /.project
-/webenv/logs
-/webenv/data
+/webenv/logs/*
+/webenv/data/*
 
