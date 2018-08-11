@@ -24,7 +24,7 @@
 
     <!--![](images/show-shared-storage.png) -->
 
-3. 在 Docker 宿主机上安装 Docker-compose
+3. 【可选】在 Docker 宿主机上安装 Docker-compose
 
     在 Windows 7 中因为 docker 宿主机 boot2docker 不会持久存储数据，因此每次启动 docker 宿主机都需要将 docker-compose 移动到其环境变量中
 
@@ -43,12 +43,20 @@
 
 4. 启动项目
 
-    第一次启动项目时会构建 Docker 镜像，需要耐心等待一会儿，另外要确保网络通畅且能访问 GitHub。
+    对于 windows 7 用户，使用 docker toolbox 安装 docker 的时候会自动安装 docker-compose 工具，因此我们可以在 windows 下启动项目，
 
     ```shell
-    $ cd /webdock
+    cd E:/webdock/webenv
+    docker-compose.exe up -d mysql nginx
+    ```
+
+    也可以进入 boot2docker 虚拟机启动项目，如果在 boot2docker 中启动项目则需要完成第 3 步骤，
+
+    ```shell
+    $ cd /webdock/webenv
     $ docker-compose up -d mysql nginx
     ```
+    第一次启动项目时会构建 Docker 镜像，需要耐心等待一会儿，另外要确保网络通畅且能访问 GitHub。
 
 5. 配置主机 hosts 文件，添加
 
@@ -57,9 +65,7 @@
     [your-docker-machine-ip]  laravel.example.com
     ```
 
-    访问 ci.example.com 和 laravel.example.com
-
-
+    访问 [ci.example.com](ci.example.com) 和 [laravel.example.com](laravel.example.com)
 
 
 ## 二、项目说明
