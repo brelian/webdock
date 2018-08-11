@@ -22,7 +22,7 @@
 
     重启虚拟机 boot2docker，ssh 远程连接工具登录到 boot2docker 机器上，`ls /` 可查看到共享文件夹。
 
-    ![](images/Snipaste_2018-07-26_17-38-11.png)
+    <!--![](images/show-shared-storage.png) -->
 
 3. 在 Docker 宿主机上安装 Docker-compose
 
