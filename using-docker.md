@@ -1,21 +1,5 @@
 # Docker 基本使用教程
 
-> Version: v1.0.0
->
-> Author: Syncher
->
-> Environment:  Windows 7
->
-> Update: 2018-07-17 18:24:24
-
----
-
-
-
-[TOC]
-
-<div style="page-break-after: always;"></div>
-
 ## 一、认识 Docker
 
 ### Linux 容器（LXC）和 Docker
