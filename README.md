@@ -1,19 +1,5 @@
 # 使用 Docker 统一部署本地开发环境
 
-> Version: v1.0.0
->
-> Author:  Syncher
->
-> OS:  Windows 7
->
-> Update: 2018-03-21 14:23:05
-
----
-
-
-
-
-
 该项目使用 Docker 部署，因此需要对 Docker 有基本的了解，关于 Docker 的介绍、安装和基本使用可以查阅[《using-docker》](using-docker.md) 手册或自行 Google 之。
 
 ## 一、启动项目
