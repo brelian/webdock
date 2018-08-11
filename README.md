@@ -26,15 +26,16 @@
 
 3. 在 Docker 宿主机上安装 Docker-compose
 
-    在 Windows 7 中因为 docker 宿主机 boot2docker 不会持久存储数据，因此每次启动 docker 宿主机都需要将 docker-compose 移动到其环境变量中：
+    在 Windows 7 中因为 docker 宿主机 boot2docker 不会持久存储数据，因此每次启动 docker 宿主机都需要将 docker-compose 移动到其环境变量中
 
     ```shell
-    $ sudo cp /webdock/bin/docker-compose /usr/local/bin
+    $ sudo cp /webdock/bin/docker-compose /usr/local/bin/
     ```
-    如果是 Linux 请通过以下方式下载符合自己机型的 `docker-compose`
+    如果`bin/docker-compose` 与当前系统不匹配，则用需要自己下载 `docker-compose` 并建议持久存储，
 
     ```shell
-    $ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+    $ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /webdock/bin/docker-compose
+    $ sudo cp /webdock/bin/docker-compose /usr/local/bin/
     $ sudo chmod +x /usr/local/bin/docker-compose
     ```
 
