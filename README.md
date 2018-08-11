@@ -1,4 +1,4 @@
-# 使用 Docker 统一部署本地开发环境
+# 使用 Docker 部署本地 Web 开发环境
 
 该项目使用 Docker 部署，因此需要对 Docker 有基本的了解，关于 Docker 的介绍、安装和基本使用可以查阅[《using-docker》](using-docker.md) 手册或自行 Google 之。
 
