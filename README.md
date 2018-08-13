@@ -52,14 +52,14 @@
 
     ```shell
     cd E:/webdock/webenv
-    docker-compose.exe up -d mysql nginx
+    docker-compose.exe up -d
     ```
 
     也可以进入 boot2docker 虚拟机启动项目，如果在 boot2docker 中启动项目则需要完成第 3 步骤，
 
     ```shell
     $ cd /webdock/webenv
-    $ docker-compose up -d mysql nginx
+    $ docker-compose up -d
     ```
     第一次启动项目时会构建 Docker 镜像，需要耐心等待一会儿，另外要确保网络通畅且能访问 GitHub。
 
@@ -71,6 +71,14 @@
     ```
 
     访问 [ci.example.com](ci.example.com) 和 [laravel.example.com](laravel.example.com)
+
+6. 停止项目
+
+      ```shell
+    $ docker-compose down
+      ```
+
+    ​
 
 
 ## 二、项目说明
