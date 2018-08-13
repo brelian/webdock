@@ -1,6 +1,6 @@
 .idea
 /.project
-/webenv/logs/*
-/webenv/data/*
-/bin/*
+/webenv/logs/nginx
+/webenv/data/mysql
+/bin/docker-compose
 
