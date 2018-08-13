@@ -1,6 +1,13 @@
 # 使用 Docker 部署本地 Web 开发环境
 
-该项目使用 Docker 部署，因此需要对 Docker 有基本的了解，关于 Docker 的介绍、安装和基本使用可以查阅[《using-docker》](using-docker.md) 手册或自行 Google 之。
+这是一个基于 Docker 的 PHP 开发环境，集成了 PHP、Nginx、MySQL 和开发常用工具如 Git、NPM、Composer 等。项目具有如下特点，
+- [x] 可选择性强，不管是 PHP、MySQL 还是 Nginx 都可以配置版本
+- [x]  兼容性强，可以在不同平台下运行（在 Windows 和 Linux 编译通过）
+- [x] 快速启动，在 Windows 机器下，可能是部署 Web 开发环境最友好的解决方案了
+- [x] 可移植性高，项目和开发环境集成在一个目录下，方便移植
+
+
+该项目使用 Docker 部署，因此需要对 Docker 有基本的了解，关于 Docker 的介绍、安装和基本使用可以查阅[《using-docker》](using-docker.md) 文档或自行 Google 之。
 
 ## 一、启动项目
 
@@ -26,20 +33,18 @@
 
 3. 【可选】在 Docker 宿主机上安装 Docker-compose
 
-    在 Windows 7 中因为 docker 宿主机 boot2docker 不会持久存储数据，因此每次启动 docker 宿主机都需要将 docker-compose 移动到其环境变量中
-
-    ```shell
-    $ sudo cp /webdock/bin/docker-compose /usr/local/bin/
-    ```
-    如果`bin/docker-compose` 与当前系统不匹配，则用需要自己下载 `docker-compose` 并建议持久存储，
+    只有在 Docker 宿主机中没有 docker-compose 的时候才需要做此步骤，这样做的目的也仅仅是为了更加友好的在宿主机中使用 docker-compose 而不是在 Windows 中使用。在 Windows 7 中因为 docker 宿主机 boot2docker 不会持久存储数据，因此每次启动 docker 宿主机都需要将 docker-compose 移动到其环境变量中，因此建议将 docker-compose 持久存储到 `bin` 目录下，第一次启动项目之前先下载 docker-compose，
 
     ```shell
     $ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /webdock/bin/docker-compose
-    $ sudo cp /webdock/bin/docker-compose /usr/local/bin/
-    $ sudo chmod +x /usr/local/bin/docker-compose
     ```
 
-    ​
+    每次启动之前 copy 到 `/usr/local/bin` 下，
+
+     ```shell
+    $ sudo cp /webdock/bin/docker-compose /usr/local/bin/
+    $ sudo chmod +x /usr/local/bin/docker-compose
+     ```
 
 4. 启动项目
 
@@ -80,33 +85,16 @@
 │  └─laravel
 │      └─public
 └─webenv  # 开发环境容器目录
-    ├─apache2
-    │  └─sites
     ├─data # 容器持久存储路径，主要存放各数据库容器的数据
     │  └─mysql
-    │      ├─default
-    │      ├─mysql
-    │      ├─performance_schema
-    │      └─sys
-    ├─laravel-echo-server
     ├─logs
-    │  ├─apache2
     │  └─nginx
-    ├─mariadb
-    │  └─docker-entrypoint-initdb.d
-    ├─memcached
-    ├─mongo
-    ├─mongo-webui
     ├─mysql
     │  ├─data
     │  └─docker-entrypoint-initdb.d
     ├─nginx
     │  └─sites # nginx 虚拟主机配置配件
     ├─php-fpm
-    ├─phpmyadmin
-    ├─portainer
-    ├─redis
-    ├─selenium
     └─workspace # 工作空间容器，集成了 Git/node/npm/python 等常用开发工具
         ├─crontab
         └─mc
@@ -146,3 +134,12 @@ innodb_use_native_aio = 0
 ### 2.3 PHP	相关配置
 
 PHP 相关配置位于 `webenv/php-fpm` 下找到对应版本做修改后重启容器。
+
+
+
+## TODO
+
+- [ ] 添加 Redis 容器
+- [ ] 添加 Apache 容器
+- [ ] 添加 Swoole 容器
+

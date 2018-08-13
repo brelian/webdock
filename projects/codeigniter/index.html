@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                fingerprint
+            </title>
+            <script src="js/evercookie.js">
+            </script>
+            <script src="js/fingerprint.js">
+            </script>
+        </meta>
+    </head>
+    <body>
+        <center>
+            <h1>
+                hello site A ^v^!
+            </h1>
+        </center>
+    </body>
+    <script>
+        new Fingerprint2().get(function(fingerprint, components) {
+            // 1.收集信息
+            var body = 'fingerprint='+fingerprint;
+
+            // 2.上报信息
+            var http = new XMLHttpRequest();
+            var url = 'reciever.php';
+            http.open('POST', url, true);
+            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            http.onreadystatechange = function() {//Call a function when the state changes.
+                if(http.readyState == 4 && http.status == 200) {
+                    console.log(http.responseText);
+                }
+            }
+            http.send(body);
+        });
+
+        // 3.存储信息
+        function storageFingerprint(deviceIdentification) {
+            console.log(deviceIdentification);
+        }
+
+    </script>
+</html>
